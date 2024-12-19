@@ -77,7 +77,6 @@ $WhitelistedApps = @(
     'Microsoft.WindowsCalculator',
     'Microsoft.WindowsStore',
     'Microsoft.Windows.Photos',
-    'CanonicalGroupLimited.UbuntuonWindows',
     'Microsoft.MicrosoftStickyNotes',
     'Microsoft.MSPaint',
     'Microsoft.WindowsCamera',
@@ -91,7 +90,6 @@ $WhitelistedApps = @(
     'Microsoft.DesktopAppInstaller',
     'WindSynthBerry',
     'MIDIBerry',
-    'Slack',
     'Microsoft.SecHealthUI',
     'WavesAudio.MaxxAudioProforDell2019',
     'Dell Optimizer Core',
@@ -213,6 +211,7 @@ $Bloatware = @(
 "*Spotify*"
 "*Sway*"
 "*Twitter*"
+"*WhatsApp*"
 "*Wunderlist*"
 "AD2F1837.HPPrinterControl"
 "AppUp.IntelGraphicsExperience"
@@ -278,7 +277,6 @@ $Bloatware = @(
 "MicrosoftWindows.Client.WebExperience"
 "MicrosoftWindows.CrossDevice"
 "MirametrixInc.GlancebyMirametrix"
-"MSTeams"
 "RealtimeboardInc.RealtimeBoard"
 "SpotifyAB.SpotifyMusic"
 #Optional: Typically not removed but you can if you need to for some reason
