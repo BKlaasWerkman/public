@@ -1648,7 +1648,6 @@ if ($manufacturer -like "Lenovo") {
         "Ammbkproc.exe"
         "AIMeetingManager.exe"
         "DADUpdater.exe"
-        "CommercialVantage.exe"
     )
 
     foreach ($process in $processnames) {
@@ -1709,12 +1708,12 @@ if ($manufacturer -like "Lenovo") {
     }
 
     # Get Lenovo Vantage service uninstall string to uninstall service
-    $lvs = Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*", "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | Where-Object DisplayName -eq "Lenovo Vantage Service"
-    if (!([string]::IsNullOrEmpty($lvs.QuietUninstallString))) {
-        $uninstall = "cmd /c " + $lvs.QuietUninstallString
-        write-output $uninstall
-        Invoke-Expression $uninstall
-    }
+#    $lvs = Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*", "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | Where-Object DisplayName -eq "Lenovo Vantage Service"
+#    if (!([string]::IsNullOrEmpty($lvs.QuietUninstallString))) {
+#        $uninstall = "cmd /c " + $lvs.QuietUninstallString
+#        write-output $uninstall
+#        Invoke-Expression $uninstall
+#    }
 
     # Uninstall Lenovo Smart
     UninstallApp -appName "Lenovo Smart"
@@ -1737,9 +1736,9 @@ if ($manufacturer -like "Lenovo") {
     ##Invoke-Expression -Command 'cmd.exe /c "c:\windows\system32\ImController.InfInstaller.exe" -uninstall'
 
     # Remove vantage associated registry keys
-    Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\E046963F.LenovoCompanion_k1h2ywk1493x8' -Recurse -ErrorAction SilentlyContinue
-    Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\ImController' -Recurse -ErrorAction SilentlyContinue
-    Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\Lenovo Vantage' -Recurse -ErrorAction SilentlyContinue
+  # Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\E046963F.LenovoCompanion_k1h2ywk1493x8' -Recurse -ErrorAction SilentlyContinue
+   # Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\ImController' -Recurse -ErrorAction SilentlyContinue
+   # Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\Lenovo Vantage' -Recurse -ErrorAction SilentlyContinue
     #Remove-Item 'HKLM:\SOFTWARE\Policies\Lenovo\Commercial Vantage' -Recurse -ErrorAction SilentlyContinue
 
     # Uninstall AI Meeting Manager Service
@@ -1749,12 +1748,12 @@ if ($manufacturer -like "Lenovo") {
         Start-Process -FilePath $path -ArgumentList $params -Wait
     }
     # Uninstall Lenovo Vantage
-    $pathname = (Get-ChildItem -Path "C:\Program Files (x86)\Lenovo\VantageService").name
-    $path = "C:\Program Files (x86)\Lenovo\VantageService\$pathname\Uninstall.exe"
-    $params = '/SILENT'
-    if (test-path -Path $path) {
-        Start-Process -FilePath $path -ArgumentList $params -Wait
-    }
+   # $pathname = (Get-ChildItem -Path "C:\Program Files (x86)\Lenovo\VantageService").name
+  #  $path = "C:\Program Files (x86)\Lenovo\VantageService\$pathname\Uninstall.exe"
+  #  $params = '/SILENT'
+  #  if (test-path -Path $path) {
+  #      Start-Process -FilePath $path -ArgumentList $params -Wait
+  #  }
 
     ##Uninstall Smart Appearance
     $path = 'C:\Program Files\Lenovo\Lenovo Smart Appearance Components\unins000.exe'
