@@ -17,11 +17,8 @@
 .OUTPUTS
 C:\ProgramData\Debloat\Debloat.log
 .NOTES
-  Version:        5.1.0
-  Author:         Andrew Taylor
-  Twitter:        @AndrewTaylor_2
-  WWW:            andrewstaylor.com
-  Creation Date:  08/03/2022
+  Version:        6.1.0
+  Author:         B. Werkman
   Purpose/Change: Initial script development
   Change: 12/08/2022 - Added additional HP applications
   Change 23/09/2022 - Added Clipchamp (new in W11 22H2)
