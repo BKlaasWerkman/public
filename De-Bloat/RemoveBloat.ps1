@@ -213,7 +213,6 @@ $Bloatware = @(
 "*Twitter*"
 "*WhatsApp*"
 "*Wunderlist*"
-"AD2F1837.HPPrinterControl"
 "AppUp.IntelGraphicsExperience"
 "C27EB4BA.DropboxOEM*"
 "Disney.37853FC22B2CE"
